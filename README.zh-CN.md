@@ -7,6 +7,16 @@
 STAC-Mem 是一个面向长期交互智能体的本地优先记忆服务。它把对话中的事实保存为带版本的
 claim，保留每次状态变化背后的原始证据，并根据查询的时间和地点解析真正适用的状态。
 
+**STAC** 是 **Spatio-Temporal、Auditable、Conflict-aware** 的首字母组合，即时空感知、
+可审计、冲突感知记忆：
+
+- **S — Spatial scope（空间作用域）**：事实或偏好可以只在特定地点或上下文中成立。
+- **T — Temporal state（时间状态）**：分别建模事实有效时间与系统获知时间，在保留旧版本的
+  同时解析当前状态和历史状态。
+- **A — Auditable evidence（可审计证据）**：claim 保留来源消息、会话、时间证据和解析决策。
+- **C — Conflict awareness（冲突感知）**：更新通过 `supersedes`、`corrects`、
+  `contradicts`、`coexists`、`retracts` 等显式关系表示，而不是静默覆盖旧值。
+
 例如，用户先后说：
 
 ```text

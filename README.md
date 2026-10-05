@@ -8,6 +8,16 @@ STAC-Mem is a local-first memory service for agents that interact with the same 
 stores conversational facts as versioned claims, keeps the evidence behind every state change, and
 resolves the state that is applicable to a query's time and place.
 
+**STAC** stands for **Spatio-Temporal, Auditable, Conflict-aware** memory:
+
+- **S — Spatial scope:** a fact or preference may apply only within a particular place or context.
+- **T — Temporal state:** valid time and knowledge time are modeled separately, so current and
+  historical views can be resolved without discarding prior versions.
+- **A — Auditable evidence:** claims retain their source messages, sessions, temporal evidence, and
+  resolution decisions.
+- **C — Conflict awareness:** updates are represented through explicit relations such as
+  `supersedes`, `corrects`, `contradicts`, `coexists`, and `retracts` rather than silent overwrite.
+
 It is useful when an agent must distinguish between statements that are all relevant but not all
 currently valid:
 

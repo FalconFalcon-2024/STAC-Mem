@@ -1,0 +1,13 @@
+{
+  "owner_id": "standalone_demo_user",
+  "session_id": "standalone_employment_001",
+  "messages": [
+    {
+      "sender_id": "standalone_demo_user",
+      "role": "user",
+      "timestamp": 1722470400000,
+      "message_id": "standalone_employment_001:0",
+      "content": "On August 1, 2024, I joined Northwind Labs as a product designer."
+    }
+  ]
+}

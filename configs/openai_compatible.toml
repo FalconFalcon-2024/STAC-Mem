@@ -1,0 +1,32 @@
+# Explicit endpoints prevent accidentally sending memory to another provider.
+# Set CHAT_API_KEY and EMBEDDING_API_KEY in the environment, never in this file.
+# Replace model names, endpoints and dimensions with your deployment's values.
+[runtime]
+database_path = "runtime/compatible.sqlite3"
+request_timeout_seconds = 60.0
+
+[extraction]
+provider = "openai_compatible"
+model = "your-chat-model"
+base_url = "http://127.0.0.1:8001/v1"
+api_key_env = "CHAT_API_KEY"
+temperature = 0.0
+max_retries = 1
+json_mode = true
+
+[embedding]
+provider = "openai_compatible"
+model = "your-embedding-model"
+base_url = "http://127.0.0.1:8002/v1"
+api_key_env = "EMBEDDING_API_KEY"
+dimensions = 1024
+space_id = "replace-with-your-embedding-space-id"
+batch_size = 10
+max_retries = 1
+send_dimensions = false
+
+[recovery]
+prepared_retention = "until_commit"
+
+[rerank]
+provider = "none"

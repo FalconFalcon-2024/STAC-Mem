@@ -1,0 +1,55 @@
+[runtime]
+database_path = "runtime/stacmem.sqlite3"
+request_timeout_seconds = 300.0
+
+[scope]
+app_id = "stacmem"
+project_id = "dev"
+
+[extraction]
+provider = "qwen"
+model = "qwen-plus"
+temperature = 0.0
+max_retries = 4
+
+[embedding]
+provider = "qwen"
+model = "text-embedding-v4"
+dimensions = 1024
+space_id = "dashscope-text-embedding-v4-1024"
+batch_size = 10
+
+[rerank]
+provider = "dashscope"
+model = "gte-rerank-v2"
+batch_size = 10
+timeout_seconds = 60.0
+max_retries = 3
+
+[retrieval]
+candidate_pool = 50
+top_k = 10
+token_budget = 4000
+
+[retrieval.weights]
+semantic = 0.42
+lexical = 0.13
+temporal = 0.20
+spatial = 0.12
+validity = 0.08
+confidence = 0.05
+
+[conflict]
+close_corrected_transaction = true
+infer_transition_end = true
+infer_transition_from_evidence = true
+transition_mode = "proposition_v2"
+temporal_relation_mode = "valid_interval_v2"
+
+[temporal_grounding]
+enabled = true
+mode = "certificate_v2"
+
+[admission]
+enabled = true
+mode = "proposition_v2"

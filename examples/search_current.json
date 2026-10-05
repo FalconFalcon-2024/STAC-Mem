@@ -1,0 +1,16 @@
+{
+  "owner_id": "demo_user",
+  "query": "Where does Alex currently live?",
+  "frame": {
+    "raw_query": "Where does Alex currently live?",
+    "owner_id": "demo_user",
+    "target_subject": "Alex",
+    "target_predicate": "residence.current",
+    "temporal_intent": "current",
+    "query_time": 1735689600000,
+    "expected_cardinality": "one",
+    "metadata": {}
+  },
+  "variant": "full",
+  "top_k": 10
+}

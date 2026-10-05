@@ -1,0 +1,5 @@
+{
+  "owner_id": "standalone_demo_user",
+  "query": "Where did I work on 2024-09-01?",
+  "top_k": 10
+}

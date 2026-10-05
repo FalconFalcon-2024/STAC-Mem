@@ -1,0 +1,36 @@
+# Standalone providers only. Set DASHSCOPE_API_KEY in the process environment.
+# CLI --database overrides this path. Use a dedicated database for each deployment.
+[runtime]
+database_path = "runtime/standalone_qwen.sqlite3"
+
+[extraction]
+provider = "qwen"
+model = "qwen-plus"
+temperature = 0.0
+max_retries = 2
+
+[embedding]
+provider = "qwen"
+model = "text-embedding-v4"
+dimensions = 1024
+batch_size = 10
+space_id = "dashscope-text-embedding-v4-1024"
+
+[rerank]
+provider = "none"
+
+[retrieval]
+candidate_pool = 50
+top_k = 10
+token_budget = 4000
+
+[recovery]
+prepared_retention = "until_commit"
+
+# Optional trusted place identities. Configure before the database's first write.
+# The model must still quote one of these names literally from the source or query.
+# [[place_schema.places]]
+# place_id = "ch/be/bern"
+# name = "Bern"
+# aliases = ["Berne", "伯尔尼"]
+# hierarchy = ["CH", "BE", "Bern"]

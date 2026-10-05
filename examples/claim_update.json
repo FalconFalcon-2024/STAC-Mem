@@ -1,0 +1,48 @@
+{
+  "claims": [
+    {
+      "owner_id": "demo_user",
+      "subject": "Alex",
+      "predicate": "residence.current",
+      "object_value": "Hangzhou",
+      "assertion_time": 1711965600000,
+      "observed_at": 1711965600000,
+      "valid_start": 1711965600000,
+      "confidence": 1.0,
+      "update_kind": "assertion",
+      "functional": true,
+      "source_session_id": "demo_session_1",
+      "source_message_ids": ["demo_message_1"],
+      "source_content": "Alex lived in Hangzhou.",
+      "extractor": "manual-demo",
+      "metadata": {}
+    },
+    {
+      "owner_id": "demo_user",
+      "subject": "Alex",
+      "predicate": "residence.current",
+      "object_value": "Chengdu",
+      "assertion_time": 1727784000000,
+      "observed_at": 1727784000000,
+      "valid_start": 1727784000000,
+      "place": {
+        "place_id": "cn/sichuan/chengdu",
+        "name": "Chengdu",
+        "aliases": [],
+        "hierarchy": ["CN", "Sichuan", "Chengdu"],
+        "latitude": 30.5728,
+        "longitude": 104.0668,
+        "radius_km": 25.0,
+        "role": "scope"
+      },
+      "confidence": 1.0,
+      "update_kind": "transition",
+      "functional": true,
+      "source_session_id": "demo_session_2",
+      "source_message_ids": ["demo_message_2"],
+      "source_content": "Alex moved to Chengdu.",
+      "extractor": "manual-demo",
+      "metadata": {}
+    }
+  ]
+}

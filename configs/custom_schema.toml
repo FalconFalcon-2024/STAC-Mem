@@ -1,0 +1,34 @@
+# Copy and edit this file before creating a database. Schema changes require a new database.
+[runtime]
+database_path = "runtime/custom_schema.sqlite3"
+
+[extraction]
+provider = "qwen"
+model = "qwen-plus"
+temperature = 0.0
+max_retries = 2
+
+[embedding]
+provider = "qwen"
+model = "text-embedding-v4"
+dimensions = 1024
+batch_size = 10
+space_id = "dashscope-text-embedding-v4-1024"
+
+[rerank]
+provider = "none"
+
+[recovery]
+prepared_retention = "until_commit"
+
+[[predicate_schema.predicates]]
+name = "contact.channel"
+description = "The person's preferred contact channel."
+aliases = ["preferred.channel"]
+scope = "global"
+
+[[predicate_schema.predicates]]
+name = "preference.exercise_mode"
+description = "The person's preferred exercise mode within a named place."
+aliases = ["exercise.preferred_mode"]
+scope = "place"

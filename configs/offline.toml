@@ -1,0 +1,51 @@
+[runtime]
+database_path = "runtime/stacmem_offline.sqlite3"
+request_timeout_seconds = 30.0
+
+[scope]
+app_id = "stacmem_test"
+project_id = "offline"
+
+[extraction]
+provider = "rule"
+model = "none"
+temperature = 0.0
+max_retries = 0
+
+[embedding]
+provider = "hash"
+model = "hashing-1024"
+dimensions = 1024
+space_id = "hashing-blake2b-token-bigram-v1-1024"
+batch_size = 64
+
+[recovery]
+prepared_retention = "until_commit"
+
+[rerank]
+provider = "none"
+model = "none"
+batch_size = 10
+timeout_seconds = 10.0
+max_retries = 0
+
+[retrieval]
+candidate_pool = 50
+top_k = 10
+token_budget = 4000
+
+[retrieval.weights]
+semantic = 0.42
+lexical = 0.13
+temporal = 0.20
+spatial = 0.12
+validity = 0.08
+confidence = 0.05
+
+[conflict]
+close_corrected_transaction = true
+infer_transition_end = true
+infer_transition_from_evidence = true
+
+[admission]
+enabled = true
